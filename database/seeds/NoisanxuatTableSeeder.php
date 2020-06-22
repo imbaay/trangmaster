@@ -1,5 +1,7 @@
 <?php
 
+use Faker\Factory;
+use App\Noisanxuat;
 use Illuminate\Database\Seeder;
 
 class NoisanxuatTableSeeder extends Seeder
@@ -23,7 +25,7 @@ class NoisanxuatTableSeeder extends Seeder
             ];
         }
 
-        Author::truncate();
-        Author::insert($noisanxuat);
+        Noisanxuat::truncate();
+        Noisanxuat::insert($noisanxuat);
     }
 }

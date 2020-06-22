@@ -13,7 +13,7 @@ class CreateDienthoaiTable extends Migration
      */
     public function up()
     {
-        Schema::create('dienthoai', function (Blueprint $table) {
+        Schema::create('dienthoais', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('slug')->unique();
@@ -28,9 +28,9 @@ class CreateDienthoaiTable extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('noisanxuat_id')->references('id')->on('noisanxuat')->onDelete('cascade');
-            $table->foreign('danhmuc_id')->references('id')->on('danhmuc')->onDelete('cascade');
-            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
+            // $table->foreign('noisanxuat_id')->references('id')->on('noisanxuat')->onDelete('cascade');
+            // $table->foreign('danhmuc_id')->references('id')->on('danhmuc')->onDelete('cascade');
+            // $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');
         });
     }
 
@@ -41,6 +41,6 @@ class CreateDienthoaiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dienthoai');
+        Schema::dropIfExists('dienthoais');
     }
 }

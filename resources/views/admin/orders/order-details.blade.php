@@ -21,7 +21,7 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">Book Name</th>
+                            <th scope="col">Phone</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Price</th>
                             <th scope="col">Sub Total</th>
@@ -30,16 +30,16 @@
                         <tbody>
                         @foreach($order_details as $order_detail)
                             <tr>
-                                <td>{{$order_detail->book_name}}</td>
-                                <td>{{$order_detail->book_quantity}}</td>
-                                <td>{{$order_detail->price}} TK</td>
-                                <td>{{$order_detail->price * $order_detail->book_quantity}} TK</td>
+                                <td>{{$order_detail->dienthoai_name}}</td>
+                                <td>{{$order_detail->dienthoai_quantity}}</td>
+                                <td>{{$order_detail->price}} VND</td>
+                                <td>{{$order_detail->price * $order_detail->dienthoai_quantity}} VND</td>
                             </tr>
                         @endforeach
                         <tr>
                             <td colspan="2"></td>
                             <td><strong>Total</strong></td>
-                            <td><strong>{{$order->total_price}} TK</strong></td>
+                            <td><strong>{{$order->total_price}} VND</strong></td>
                         </tr>
                         </tbody>
                     </table>

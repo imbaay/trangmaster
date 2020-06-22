@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Review;
+use App\Danhgia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,7 @@ class AdminReviewsController extends Controller
      */
     public function index()
     {
-        $reviews = Review::orderBy('id', 'DESC')->get();
+        $reviews = Danhgia::orderBy('id', 'DESC')->get();
         return view('admin.reviews.all-reviews', compact('reviews'));
     }
 
@@ -82,7 +82,7 @@ class AdminReviewsController extends Controller
      */
     public function destroy($id)
     {
-        $review = Review::findOrFail($id);
+        $review = Danhgia::findOrFail($id);
         $review->delete();
 
         return redirect()->back()

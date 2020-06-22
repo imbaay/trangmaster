@@ -1,5 +1,9 @@
 <?php
 
+use App\Danhgia;
+use Carbon\Carbon;
+use Faker\Factory;
+use App\Dienthoai;
 use Illuminate\Database\Seeder;
 
 class DanhgiaTableSeeder extends Seeder
@@ -24,13 +28,13 @@ class DanhgiaTableSeeder extends Seeder
                     'user_id'      => rand(1,3),
                     'dienthoai_id'      => $dienthoai->id,
                     'body'         => $faker->paragraphs(rand(1, 4), true),
-                    'created_at'   => $reviewDate,
-                    'updated_at'   =>  $reviewDate,
+                    'created_at'   => $danhgiaDate,
+                    'updated_at'   =>  $danhgiaDate,
                 ];
             }
 
         }
-        Review::truncate();
-        Review::insert($danhgia);
+        Danhgia::truncate();
+        Danhgia::insert($danhgia);
     }
 }

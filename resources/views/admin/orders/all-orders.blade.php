@@ -54,7 +54,7 @@
                             @foreach($orders as $order)
                                 <tr>
                                     <td>
-                                        {!! Form::open(['method'=>'DELETE', 'route'=> ['orders.destroy', $order->id]]) !!}
+                                        {!! Form::open(['method'=>'DELETE', 'route'=> ['donhang.destroy', $order->id]]) !!}
                                         <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-times"></i></button>
                                         {!! Form::close() !!}
                                     </td>
@@ -64,18 +64,18 @@
                                     <td>{{$order->total_price}}</td>
                                     <td>
                                         @if($order->order_status == 1)
-                                        {!! Form::open(['method'=>'PATCH', 'route'=>['orders.update', $order->id]]) !!}
+                                        {!! Form::open(['method'=>'PATCH', 'route'=>['donhang.update', $order->id]]) !!}
                                             <input type="hidden" name="order_status" value="0">
                                           <button type="submit" class="btn btn-success btn-sm">Accepted</button>
                                         {!! Form::close() !!}
                                         @else
-                                            {!! Form::open(['method'=>'PATCH', 'route'=>['orders.update', $order->id]]) !!}
+                                            {!! Form::open(['method'=>'PATCH', 'route'=>['donhang.update', $order->id]]) !!}
                                             <input type="hidden" name="order_status" value="1">
                                             <button type="submit" class="btn btn-warning btn-sm">Pending</button>
                                             {!! Form::close() !!}
                                         @endif
                                     </td>
-                                    <td><a href="{{route('orders.show', $order->id)}}">Order Details</a></td>
+                                    <td><a href="{{route('donhang.show', $order->id)}}">Order Details</a></td>
                                 </tr>
                             @endforeach
                             </tbody>

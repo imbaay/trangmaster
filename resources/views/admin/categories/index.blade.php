@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-6">
                     <div>
-                        <a href="{{route('categories.create')}}" class="btn-primary btn-sm">
+                        <a href="{{route('danhmuc.create')}}" class="btn-primary btn-sm">
                             <i class="fas fa-plus-circle mr-1"></i>
                             Add categories
                         </a>

@@ -1,6 +1,8 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DienthoaiTableSeeder extends Seeder
 {
@@ -11,9 +13,9 @@ class DienthoaiTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('dienthoai')->truncate();
+        DB::table('dienthoais')->truncate();
 
-        $faker = Factory::create();
+        $faker = Faker\Factory::create();
 
         $books = [];
 
@@ -42,6 +44,6 @@ class DienthoaiTableSeeder extends Seeder
             ];
         }
 
-        DB::table('dienthoai')->insert($dienthoai);
+        DB::table('dienthoais')->insert($dienthoai);
     }
 }

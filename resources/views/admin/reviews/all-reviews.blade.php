@@ -32,7 +32,7 @@
                                 <th>Action</th>
                                 <th>id</th>
                                 <th>User</th>
-                                <th>Book</th>
+                                <th>Phone</th>
                                 <th>Review</th>
                                 <th>Created at</th>
                             </tr>
@@ -42,7 +42,7 @@
                                 <th>Action</th>
                                 <th>id</th>
                                 <th>User</th>
-                                <th>Book</th>
+                                <th>Phone</th>
                                 <th>Review</th>
                                 <th>Created at</th>
                             </tr>
@@ -51,7 +51,7 @@
                             @foreach($reviews as $review)
                                 <tr>
                                     <td>
-                                        {!! Form::open(['method'=>'DELETE', 'route'=> ['reviews.destroy', $review->id]]) !!}
+                                        {!! Form::open(['method'=>'DELETE', 'route'=> ['danhgia.destroy', $review->id]]) !!}
                                         <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-times"></i></button>
                                         {!! Form::close() !!}
                                     </td>

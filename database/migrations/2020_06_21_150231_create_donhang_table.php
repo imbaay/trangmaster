@@ -13,7 +13,7 @@ class CreateDonhangTable extends Migration
      */
     public function up()
     {
-        Schema::create('donhang', function (Blueprint $table) {
+        Schema::create('donhangs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('shipping_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateDonhangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donhang');
+        Schema::dropIfExists('donhangs');
     }
 }

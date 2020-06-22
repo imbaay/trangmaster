@@ -13,7 +13,7 @@ class CreateChitietdonhangTable extends Migration
      */
     public function up()
     {
-        Schema::create('chitietdonhang', function (Blueprint $table) {
+        Schema::create('chitietdonhangs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('donhang_id')->unsigned();
             $table->integer('dienthoai_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateChitietdonhangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chitietdonhang');
+        Schema::dropIfExists('chitietdonhangs');
     }
 }

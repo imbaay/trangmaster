@@ -66,7 +66,7 @@ Route::group(['middleware' => 'admin'], function (){
     /// đang sửa ở đây
     Route::resource('/admin/phones', 'Admin\AdminPhonesController');
     Route::resource('/admin/danhmuc', 'Admin\AdminCategoriesController');
-    Route::resource('/admin/noisanxuat', 'Admin\AdminAuthorsController');
+    Route::resource('/admin/noisanxuat', 'Admin\AdminProductionsController');
 
     ////////////////////////////////////////////
     

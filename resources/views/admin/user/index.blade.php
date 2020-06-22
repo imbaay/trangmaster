@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div class="col-6 text-right">
-                    <span class="mr-2"><a href="#">Discount books</a> |</span>
-                    <span class="mr-2"><a href="#">Trash books</a></span>
+                    <span class="mr-2"><a href="#">Discount phones</a> |</span>
+                    <span class="mr-2"><a href="#">Trash phones</a></span>
                 </div>
             </div>
         </div>

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Author;
+use App\Noisanxuat;
 use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Intervention\Image\ImageManagerStatic as Photo;
 
-class AdminAuthorsController extends Controller
+class AdminProductionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class AdminAuthorsController extends Controller
      */
     public function index()
     {
-        $authors = Author::with('image')->orderBy('id', 'DESC')->get();
+        $authors = Noisanxuat::with('image')->orderBy('id', 'DESC')->get();
         return view('admin.author.index', compact('authors'));
     }
 
@@ -63,9 +63,9 @@ class AdminAuthorsController extends Controller
             $input['image_id'] = $image->id;
         }
 
-        $create_author = Author::create($input);
-        return redirect('/admin/authors')
-            ->with('success_message', 'Author created successfully');
+        $create_author = Noisanxuat::create($input);
+        return redirect('/admin/noisanxuat')
+            ->with('success_message', 'Production created successfully');
 
 
     }
@@ -89,7 +89,7 @@ class AdminAuthorsController extends Controller
      */
     public function edit($id)
     {
-        $author = Author::findOrFail($id);
+        $author = Noisanxuat::findOrFail($id);
         return view('admin.author.edit', compact('author'));
     }
 
@@ -126,10 +126,10 @@ class AdminAuthorsController extends Controller
             $input['image_id'] = $image->id;
         }
 
-        $author = Author::findOrFail($id);
+        $author = Noisanxuat::findOrFail($id);
         $author->update($input);
-        return redirect('/admin/authors')
-            ->with('success_message', 'Author updated successfully');
+        return redirect('/admin/noisanxuat')
+            ->with('success_message', 'Production updated successfully');
     }
 
     /**
@@ -140,7 +140,7 @@ class AdminAuthorsController extends Controller
      */
     public function destroy($id)
     {
-        $author = Author::findOrFail($id);
+        $author = Noisanxuat::findOrFail($id);
 
         if(! is_null($author->image_id))
         {
@@ -151,6 +151,6 @@ class AdminAuthorsController extends Controller
         $author->delete();
 
         return redirect()->back()
-            ->with('alert_message', "Author deleted successfully.");
+            ->with('alert_message', "Production deleted successfully.");
     }
 }

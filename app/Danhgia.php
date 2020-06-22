@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Danhgia extends Model
 {
-    protected $guarded = [];
+    protected $table = 'donhangs';
 
     public function user()
     {

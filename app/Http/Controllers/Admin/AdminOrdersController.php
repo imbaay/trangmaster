@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Order;
-use App\OrderDetail;
+use App\Donhang;
+use App\Chitietdonhang;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class AdminOrdersController extends AdminBaseController
      */
     public function index()
     {
-        $orders = Order::latest()->get();
+        $orders = Donhang::latest()->get();
         return view('admin.orders.all-orders', compact('orders'));
     }
 
@@ -49,8 +49,8 @@ class AdminOrdersController extends AdminBaseController
      */
     public function show($id)
     {
-        $order = Order::findOrFail($id);
-        $order_details = OrderDetail::where('order_id', $id)->get();
+        $order = Donhang::findOrFail($id);
+        $order_details = Chitietdonhang::where('order_id', $id)->get();
 
         return view('admin.orders.order-details', compact('order_details', 'order'));
     }
@@ -76,7 +76,7 @@ class AdminOrdersController extends AdminBaseController
     public function update(Request $request, $id)
     {
         $input = $request->all();
-        $order = Order::findOrFail($id);
+        $order = Donhang::findOrFail($id);
         $order->update($input);
 
         return redirect()->back();
@@ -90,8 +90,8 @@ class AdminOrdersController extends AdminBaseController
      */
     public function destroy($id)
     {
-        $order = Order::findOrFail($id);
+        $order = Donhang::findOrFail($id);
         $order->delete();
-        return redirect()->back()->with('alert_message', 'Order deleted successfully');
+        return redirect()->back()->with('alert_message', 'Don hang deleted successfully');
     }
 }

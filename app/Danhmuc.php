@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Danhmuc extends Model
 {
-    protected $guarded = [];
+    protected $table = 'danhmucs';
 
     public function dienthoai()
     {

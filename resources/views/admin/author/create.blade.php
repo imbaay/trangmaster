@@ -4,15 +4,15 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Add new author</h1>
+        <h1 class="h3 mb-2 text-gray-800">Add new production</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Author create form</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Production create form</h6>
             </div>
             <div class="card-body">
-                {!! Form::open(['method'=>'POST', 'action'=>'Admin\AdminAuthorsController@store', 'files'=>true]) !!}
+                {!! Form::open(['method'=>'POST', 'action'=>'Admin\AdminProductionsController@store', 'files'=>true]) !!}
                 <div class="form-group">
                     {!! Form::label('name') !!}
                     {!! Form::text('name', null, ['class'=>'form-control '.($errors->has('name')? 'is-invalid': '')]) !!}

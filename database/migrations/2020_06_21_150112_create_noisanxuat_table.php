@@ -13,7 +13,7 @@ class CreateNoisanxuatTable extends Migration
      */
     public function up()
     {
-        Schema::create('noisanxuat', function (Blueprint $table) {
+        Schema::create('noisanxuats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('image_id')->unsigned()->index()->nullable();
             $table->string('name');
@@ -21,7 +21,7 @@ class CreateNoisanxuatTable extends Migration
             $table->text('bio')->nullable();
             $table->timestamps();
 
-            $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');            
+            // $table->foreign('image_id')->references('id')->on('images')->onDelete('cascade');            
         });
     }
 
@@ -32,6 +32,6 @@ class CreateNoisanxuatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('noisanxuat');
+        Schema::dropIfExists('noisanxuats');
     }
 }

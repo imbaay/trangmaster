@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Dienthoai extends Model
 {
     use SoftDeletes;
-    protected $guarded = [];
+    protected $table = 'dienthoais';
     /*
      * RELATIONS
      */

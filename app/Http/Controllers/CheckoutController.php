@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\dienthoai;
+use App\Dienthoai;
 use App\Http\Requests\ShippingAddressRequest;
 use App\Donhang;
 use App\Chitietdonhang;

@@ -4,13 +4,13 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Edit author</h1>
+        <h1 class="h3 mb-2 text-gray-800">Edit production</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <span class="mr-3"><a href="{{route('authors.index')}}" cl><i class="fas fa-long-arrow-alt-left"></i> Back</a></span>
-                <span class="m-0 font-weight-bold text-primary">Author edit form</span>
+                <span class="mr-3"><a href="{{route('noisanxuat.index')}}" cl><i class="fas fa-long-arrow-alt-left"></i> Back</a></span>
+                <span class="m-0 font-weight-bold text-primary">Production edit form</span>
             </div>
             <div class="row">
                 <div class="col-lg-3">
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="card-body">
-                        {!! Form::model($author, ['method'=>'PATCH', 'action'=>['Admin\AdminAuthorsController@update', $author->id], 'files'=>true]) !!}
+                        {!! Form::model($author, ['method'=>'PATCH', 'action'=>['Admin\AdminProductionsController@update', $author->id], 'files'=>true]) !!}
                         <div class="form-group">
                             {!! Form::label('name') !!}
                             {!! Form::text('name', null, ['class'=>'form-control '.($errors->has('name')? 'is-invalid': '')]) !!}

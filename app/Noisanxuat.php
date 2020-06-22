@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Noisanxuat extends Model
 {
-    protected $guarded = [];
+    protected $table = 'noisanxuats';
 
     public function dienthoai()
     {

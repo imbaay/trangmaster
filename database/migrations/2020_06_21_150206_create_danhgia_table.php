@@ -21,8 +21,8 @@ class CreateDanhgiaTable extends Migration
             $table->integer('is_active')->default(0);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('dienthoai_id')->references('id')->on('dienthoai')->onDelete('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('dienthoai_id')->references('id')->on('dienthoai')->onDelete('cascade');
         });
     }
 

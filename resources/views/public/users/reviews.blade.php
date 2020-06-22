@@ -9,8 +9,8 @@
             <table class="table table-borderless table-striped mb-4">
                 <thead>
                 <tr>
-                    <th scope="col">Book image</th>
-                    <th scope="col" class="d-none d-sm-block">Book</th>
+                    <th scope="col">Phone image</th>
+                    <th scope="col" class="d-none d-sm-block">Phone</th>
                     <th scope="col">Review</th>
                     <th scope="col">Created</th>
                     <th scope="col">Action</th>
@@ -19,8 +19,8 @@
                 <tbody>
                 @foreach($myReviews as $review)
                     <tr>
-                        <td><img src="{{$review->book->image_url}}" width="60" alt=""></td>
-                        <td class="d-none d-sm-block">{{$review->book->title}}</td>
+                        <td><img src="{{$review->phone->image_url}}" width="60" alt=""></td>
+                        <td class="d-none d-sm-block">{{$review->phone->title}}</td>
                         <td>{{str_limit($review->body, 200)}}</td>
                         <td>{{$review->created_at->diffForHumans()}}</td>
                         <td>
