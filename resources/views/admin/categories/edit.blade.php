@@ -9,7 +9,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <span class="mr-3"><a href="{{route('categories.index')}}" cl><i class="fas fa-long-arrow-alt-left"></i> Back</a></span>
+                <span class="mr-3"><a href="{{route('danhmuc.index')}}" cl><i class="fas fa-long-arrow-alt-left"></i> Back</a></span>
                 <span class="m-0 font-weight-bold text-primary">Category edit form</span>
             </div>
             <div class="card-body">

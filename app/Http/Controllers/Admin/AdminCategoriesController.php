@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Danhmuc;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,7 @@ class AdminCategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Danhmuc::all();
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -43,8 +43,8 @@ class AdminCategoriesController extends Controller
         ]);
 
         $input = $request->all();
-        Category::create($input);
-        return redirect('/admin/categories')
+        Danhmuc::create($input);
+        return redirect('/admin/dahmuc')
             ->with('success_message', 'Category create successfully');
     }
 
@@ -67,7 +67,7 @@ class AdminCategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $category = Danhmuc::findOrFail($id);
         return view('admin.categories.edit', compact('category'));
     }
 
@@ -101,8 +101,8 @@ class AdminCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
-        $category->books()->delete();
+        $category = Danhmuc::findOrFail($id);
+        $category->dienthoai()->delete();
         $category->delete();
         return redirect()->back()
             ->with('alert_message', 'Category deleted successfully');

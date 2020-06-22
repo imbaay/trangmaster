@@ -53,9 +53,9 @@ class AdminPhonesController extends Controller
 
     public function edit($id)
     {
-        $book = Dienthoai::findOrFail($id);
+        $phone = Dienthoai::findOrFail($id);
 
-        return view('admin.books.edit', compact('book'));
+        return view('admin.books.edit', compact('phone'));
     }
 
     public function update(DienthoaiUpdateRequest $request, $id)
@@ -115,8 +115,8 @@ class AdminPhonesController extends Controller
 
     public function trashPhones()
     {
-        $books = Dienthoai::onlyTrashed()->orderBy('id', 'DESC')->get();
-        return view('admin.books.trash-books', compact('books'));
+        $phones = Dienthoai::onlyTrashed()->orderBy('id', 'DESC')->get();
+        return view('admin.books.trash-books', compact('phones'));
     }
 
     public function discountPhones()

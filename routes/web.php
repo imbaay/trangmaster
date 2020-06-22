@@ -15,10 +15,10 @@
     return view('welcome');
 });*/
 
-Route::get('/', 'DienthoaiHomeController@index')->name('dienthoai.home');
+Route::get('/', 'DienthoaiHomeController@index')->name('phones.home');
 
 Route::get('/all-phones', 'DienthoaiHomeController@allPhones')->name('all-phones');
-Route::get('/discount-books', 'DienthoaiHomeController@discountPhones')->name('discount-phones');
+Route::get('/discount-phones', 'DienthoaiHomeController@discountPhones')->name('discount-phones');
 Route::get('/danhmuc/{danhmuc}', 'DienthoaiHomeController@danhmuc')->name('danhmuc');
 Route::get('/noisanxuat/{noisanxuat}', 'DienthoaiHomeController@noisanxuat')->name('noisanxuat');
 
@@ -26,7 +26,7 @@ Route::get('/phone/{phone}', 'DienthoaiHomeController@phoneDetails')->name('phon
 
 //////////////////////////////////////////////////////////
 
-Route::post('/dienthoai/{dienthoai}/review', 'ReviewsController@store')->name('dienthoai.review');
+Route::post('/phone/{phone}/review', 'ReviewsController@store')->name('phone.review');
 
 // Cart Route
 
@@ -64,12 +64,15 @@ Route::group(['middleware' => 'admin'], function (){
     ///////////////////////////////////////////////////////////////
 
     /// đang sửa ở đây
-    Route::resource('/admin/books', 'Admin\AdminPhonesController');
-    Route::resource('/admin/categories', 'Admin\AdminCategoriesController');
-    Route::resource('/admin/authors', 'Admin\AdminAuthorsController');
+    Route::resource('/admin/phones', 'Admin\AdminPhonesController');
+    Route::resource('/admin/danhmuc', 'Admin\AdminCategoriesController');
+    Route::resource('/admin/noisanxuat', 'Admin\AdminAuthorsController');
+
+    ////////////////////////////////////////////
+    
     Route::resource('/admin/users', 'Admin\AdminUsersController');
-    Route::resource('/admin/orders', 'Admin\AdminOrdersController');
-    Route::resource('/admin/reviews', 'Admin\AdminReviewsController');
+    Route::resource('/admin/donhang', 'Admin\AdminOrdersController');
+    Route::resource('/admin/danhgia', 'Admin\AdminReviewsController');
 });
 // End of admin route
 

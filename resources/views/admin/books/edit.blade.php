@@ -4,23 +4,23 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Edit book</h1>
+        <h1 class="h3 mb-2 text-gray-800">Edit phone</h1>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <span class="mr-3"><a href="{{route('books.index')}}" cl><i class="fas fa-long-arrow-alt-left"></i> Back</a></span>
-                <span class="m-0 font-weight-bold text-primary">Book edit form</span>
+                <span class="mr-3"><a href="{{route('phones.index')}}" cl><i class="fas fa-long-arrow-alt-left"></i> Back</a></span>
+                <span class="m-0 font-weight-bold text-primary">Phone edit form</span>
             </div>
             <div class="row">
                 <div class="col-lg-3">
                     <div class="display-img text-center p-4">
-                        <img src="{{$book->image? $book->image_url:$book->default_img}}" alt="">
+                        <img src="{{$dienthoai->image? $dienthoai->image_url:$dienthoai->default_img}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="card-body">
-                        {!! Form::model($book, ['method'=>'PATCH', 'action'=>['Admin\AdminBooksController@update', $book->id], 'files'=>true]) !!}
+                        {!! Form::model($dienthoai, ['method'=>'PATCH', 'action'=>['Admin\AdminPhonesController@update', $dienthoai->id], 'files'=>true]) !!}
 
                         <div class="form-group">
                             {!! Form::label('title') !!}
@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('image_id', 'Book Image') !!}
+                            {!! Form::label('image_id', 'Phone Image') !!}
                             {!! Form::file('image_id', ['class'=>'form-control '.($errors->has('image_id')? 'is-invalid': '')]) !!}
                             <small>Max size 1MB</small>
                             @if($errors->has('image_id'))

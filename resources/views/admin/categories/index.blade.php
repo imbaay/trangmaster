@@ -16,8 +16,8 @@
                     </div>
                 </div>
                 <div class="col-6 text-right">
-                    <span class="mr-2"><a href="#">Discount books</a> |</span>
-                    <span class="mr-2"><a href="#">Trash books</a></span>
+                    <span class="mr-2"><a href="#">Discount phones</a> |</span>
+                    <span class="mr-2"><a href="#">Trash phones</a></span>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
                             <tr>
                                 <th>Action</th>
                                 <th>Name</th>
-                                <th>Books Count</th>
+                                <th>Phone Count</th>
                                 <th>Create Date</th>
                                 <th>Update Date</th>
                             </tr>
@@ -47,7 +47,7 @@
                             <tr>
                                 <th>Action</th>
                                 <th>Name</th>
-                                <th>Books Count</th>
+                                <th>Phone Count</th>
                                 <th>Create Date</th>
                                 <th>Update Date</th>
                             </tr>
@@ -58,14 +58,14 @@
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['Admin\AdminCategoriesController@destroy', $category->id]]) !!}
 
-                                        <a href="{{route('categories.edit', $category->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
+                                        <a href="{{route('danhmuc.edit', $category->id)}}" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
 
-                                        <button type="submit" onclick="return confirm('Category will delete permanently. All books related with this category will deleted. Are you sure to delete??')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        <button type="submit" onclick="return confirm('Category will delete permanently. All phones related with this category will deleted. Are you sure to delete??')" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
 
                                         {!! Form::close() !!}
                                     </td>
-                                    <td><a href="{{route('categories.edit', $category->id)}}">{{$category->name}}</a></td>
-                                    <td>{{$category->books->count()}}</td>
+                                    <td><a href="{{route('danhmuc.edit', $category->id)}}">{{$category->name}}</a></td>
+                                    <td>{{$category->dienthoai->count()}}</td>
                                     <td>{{$category->created_at? $category->created_at->diffForHumans(): '-'}}</td>
                                     <td>{{$category->updated_at? $category->updated_at->diffForHumans(): '-'}}</td>
                                 </tr>
